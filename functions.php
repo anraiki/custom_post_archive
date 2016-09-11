@@ -26,7 +26,6 @@ function custom_post_in_archive($query){
 
         //Make the Query
         $query->set( 'post_type', $customPostType );
-        $query->set( 'posts_per_page', 1 );
     }
 }
 add_action( 'pre_get_posts', 'custom_post_in_archive' );
