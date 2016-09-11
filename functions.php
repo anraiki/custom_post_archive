@@ -18,6 +18,9 @@ function custom_post_in_archive($query){
         $cptQuery = "Select `post_type` FROM `" . $wpdb->prefix . "posts` GROUP BY `post_type`";
         $results = $wpdb->get_results($cptQuery);
 
+        //We are adding to read "Posts" and "Custom Post Type".
+        $customPostType[] = "post";
+
         //Ensure we grab a custom post type by comparing it to WordPress's post types
         foreach($results as $key => $result) {
             if( !in_array($result->post_type, $wordPress_postType) )
