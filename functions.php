@@ -2,7 +2,7 @@
 
 //User friendly implementation of having all post type shown in the archives
 function custom_post_in_archive($query){
-    if($query->is_main_query()) {
+    if(is_main_query() && is_home()) {
 
         //By setting '_builtin' to false, we exclude the WordPress built-in public post types.
         $args = array(
